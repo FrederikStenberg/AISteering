@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccbc34516261d7648bcd9c91835f945f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultTile: {fileID: 1821841473914548, guid: c9ef8a709ff160042b48eabae7257e6a,
+  defaultTile: {fileID: 1988720260010882, guid: c9ef8a709ff160042b48eabae7257e6a,
     type: 2}
 --- !u!4 &1297920507
 Transform:
