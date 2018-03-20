@@ -30,9 +30,15 @@ public class TileInit : MonoBehaviour {
             for (int j = 0; j < tiley; j++)
             {
                 tiles[i, j] = Instantiate(tile1, new Vector3(i, 0, j), Quaternion.identity);
-                tiles[i, j].name = "[" + i + ", " + j + "]";
+                tiles[i, j].name = "[" + i + ", " + j + "]";               
                 tiles[i, j].transform.parent = transform;
             }
         }
     }
+
+    void PathFinding()
+    {
+
+    }
 }
+
