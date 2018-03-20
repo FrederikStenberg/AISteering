@@ -36,9 +36,24 @@ public class TileInit : MonoBehaviour {
         }
     }
 
-    void PathFinding()
+    void PathFinding(GameObject[,] tileArray, GameObject target) // A*
     {
+        List<GameObject> open = new List<GameObject>(); //the set of nodes to be evaluated
+        List<GameObject> closed = new List<GameObject>(); //the set of notes already evaluated
 
+        open.Add(tileArray[0, 0]); //Add start node to open
+
+        while(true)
+        {
+            GameObject current = tileArray[0, 0]; //(unfinished line) needs to be node in open with the lowest f_cost
+            open.Remove(current);
+            closed.Add(current);
+
+            if(current = target)
+            {
+                return;
+            }
+        }
     }
 }
 
