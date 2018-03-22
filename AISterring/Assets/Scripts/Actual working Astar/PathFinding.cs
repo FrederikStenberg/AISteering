@@ -11,7 +11,8 @@ public class PathFinding : MonoBehaviour {
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q))
+        //FindPath(seeker.position, target.position);
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             FindPath(seeker.position, target.position);
         }                     
@@ -49,7 +50,7 @@ public class PathFinding : MonoBehaviour {
                         continue;
                     }
 
-                int newMovementCostToNeighbour = currentNode.gCost + GetDistance(currentNode, neighbour);
+                int newMovementCostToNeighbour = currentNode.gCost + GetDistance(currentNode, neighbour) + neighbour.movementPenalty;
                 if(newMovementCostToNeighbour < neighbour.gCost || !openSet.Contains(neighbour))
                 {
                     neighbour.gCost = newMovementCostToNeighbour;
