@@ -11,7 +11,7 @@ public class PathFinding : MonoBehaviour {
 
     private void Update()
     {
-        //FindPath(seeker.position, target.position);
+        FindPath(seeker.position, target.position);
         if (Input.GetKeyDown(KeyCode.Q))
         {
             FindPath(seeker.position, target.position);
