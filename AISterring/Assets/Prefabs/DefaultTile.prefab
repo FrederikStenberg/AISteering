@@ -114,4 +114,5 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 97455e0c424b26947a46cbdcdc7832a9, type: 3}
   - {fileID: 2800000, guid: 6c08eb194dc03e5488f177a02cba44dc, type: 3}
   - {fileID: 2800000, guid: e328842672f167f49987ebe6df3dee2c, type: 3}
+  rend: {fileID: 23529158566228936}
   weightValue: 0
