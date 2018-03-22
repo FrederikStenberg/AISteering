@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Diagnostics;
 
 public class PathFinding : MonoBehaviour {
 
@@ -10,7 +11,10 @@ public class PathFinding : MonoBehaviour {
 
     private void Update()
     {
-        FindPath(seeker.position, target.position);
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            FindPath(seeker.position, target.position);
+        }                     
     }
 
     private void Awake()
