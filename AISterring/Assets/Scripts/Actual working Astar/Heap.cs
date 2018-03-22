@@ -27,7 +27,7 @@ public class Heap<T> where T : IHeapItem<T>{
         currentItemCount--;
         items[0] = items[currentItemCount];
         items[0].HeapIndex = 0;
-        SortDown(items[9]);
+        SortDown(items[0]);
         return firstItem;
     }
 
@@ -105,7 +105,7 @@ public class Heap<T> where T : IHeapItem<T>{
     void Swap(T itemA, T itemB)
     {
         items[itemA.HeapIndex] = itemB;
-        items[itemB.HeapIndex] = itemB;
+        items[itemB.HeapIndex] = itemA;
         int itemAIndex = itemA.HeapIndex;
         itemA.HeapIndex = itemB.HeapIndex;
         itemB.HeapIndex = itemAIndex;
