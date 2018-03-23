@@ -188,6 +188,7 @@
 "Assets/Scripts/Actual working Astar/PathFinding.cs"
 "Assets/Scripts/Actual working Astar/PathRequestManager.cs"
 "Assets/Scripts/Actual working Astar/Unit.cs"
+Assets/Scripts/Behaviour/UnitArrival.cs
 Assets/Scripts/TileData.cs
 Assets/Scripts/TileInit.cs
 Assets/unity-python-master/Python/Examples/PythonHelloWorld.cs

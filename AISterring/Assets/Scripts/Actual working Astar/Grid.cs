@@ -25,7 +25,7 @@ public class Grid : MonoBehaviour
 
         foreach (TerrainType region in walkableRegions)
         {
-            walkableMask.value += walkableMask |= region.terrainMask.value;
+            walkableMask.value |= region.terrainMask.value;
             walkableRegionsDictionary.Add((int)Mathf.Log(region.terrainMask.value, 2), region.terrainPenalty);
         }
 
