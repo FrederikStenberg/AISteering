@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using System;
-using UnityEngine;
 
-public class PathRequestManager : MonoBehaviour {
+public class PathRequestManager : MonoBehaviour
+{
 
     Queue<PathRequest> pathRequestQueue = new Queue<PathRequest>();
     PathRequest currentPathRequest;
@@ -28,7 +29,7 @@ public class PathRequestManager : MonoBehaviour {
 
     void TryProcessNext()
     {
-        if (!isProcessingPath && pathRequestQueue.Count > 0 )
+        if (!isProcessingPath && pathRequestQueue.Count > 0)
         {
             currentPathRequest = pathRequestQueue.Dequeue();
             isProcessingPath = true;
@@ -48,11 +49,13 @@ public class PathRequestManager : MonoBehaviour {
         public Vector3 pathStart;
         public Vector3 pathEnd;
         public Action<Vector3[], bool> callback;
+
         public PathRequest(Vector3 _start, Vector3 _end, Action<Vector3[], bool> _callback)
         {
             pathStart = _start;
             pathEnd = _end;
             callback = _callback;
         }
+
     }
 }
