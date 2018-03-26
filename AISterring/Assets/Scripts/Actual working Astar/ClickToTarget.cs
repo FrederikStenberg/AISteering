@@ -6,6 +6,8 @@ public class ClickToTarget : MonoBehaviour {
 
     Vector3 point;
 
+    public bool newTarget = false;
+
     private void Update()
     {
         if(Input.GetMouseButtonDown(0))
@@ -18,6 +20,7 @@ public class ClickToTarget : MonoBehaviour {
             {
                 point = hit.point;
                 transform.position = point;
+                newTarget = true;
             }
 
             transform.position = point;

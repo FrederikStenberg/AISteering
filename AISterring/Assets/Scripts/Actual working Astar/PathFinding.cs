@@ -19,11 +19,11 @@ public class PathFinding : MonoBehaviour {
 
     private void Update()
     {
-        FindPath(seeker.position, target.position);
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (target.GetComponent<ClickToTarget>().newTarget == true)
         {
-           StartFindPath(seeker.transform.position, target.transform.position);
-        }                     
+            StartFindPath(seeker.transform.position, target.transform.position);
+            target.GetComponent<ClickToTarget>().newTarget = false;
+        }
     }
 
     public void StartFindPath(Vector3 startPos, Vector3 targetPos)
