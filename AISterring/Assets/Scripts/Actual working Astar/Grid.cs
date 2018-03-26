@@ -6,6 +6,7 @@ public class Grid : MonoBehaviour
 {
 
     public bool displayGridGizmos;
+    public bool followGrid;
     public LayerMask unwalkableMask;
     public Vector2 gridWorldSize;
     public float nodeRadius;
