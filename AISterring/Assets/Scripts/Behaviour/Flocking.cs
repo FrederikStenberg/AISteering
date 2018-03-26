@@ -8,6 +8,10 @@ public class Flocking : MonoBehaviour {
     private float dist;
     private int neighbourCount = 0;
 
+    public float alignmentDistance = 100;
+    public float cohestionDistance = 100;
+    public float seperationDistance = 50;
+
     private Vector3 Alignment()
     {
         foreach (GameObject agent in GameObject.Find("AgentArray").GetComponent<AgentArrayScript>().array)
@@ -15,7 +19,7 @@ public class Flocking : MonoBehaviour {
             if (agent != this.gameObject)
             {
                 dist = transform.position.x + transform.position.z - agent.transform.position.x - agent.transform.position.z;
-                if ((agent.transform.position - transform.position).magnitude < 100)
+                if ((agent.transform.position - transform.position).magnitude < alignmentDistance)
                 {
                     alignmentVector.x += agent.GetComponent<Rigidbody>().velocity.x;
                     alignmentVector.z += agent.GetComponent<Rigidbody>().position.z;
@@ -45,7 +49,7 @@ public class Flocking : MonoBehaviour {
             if (agent != this.gameObject)
             {
                 dist = transform.position.x + transform.position.z - agent.transform.position.x - agent.transform.position.z;
-                if ((agent.transform.position - transform.position).magnitude < 100)
+                if ((agent.transform.position - transform.position).magnitude < cohestionDistance)
                 {
                     alignmentVector.x += agent.transform.position.x;
                     alignmentVector.z += agent.transform.position.z;
@@ -77,7 +81,7 @@ public class Flocking : MonoBehaviour {
             {
                 dist = transform.position.x + transform.position.z - agent.transform.position.x - agent.transform.position.z;
 
-                if ((agent.transform.position - transform.position).magnitude < 50)
+                if ((agent.transform.position - transform.position).magnitude < seperationDistance)
                 {
                     alignmentVector.x += agent.transform.position.x - transform.position.x;
                     alignmentVector.z += agent.transform.position.z - transform.position.z;
@@ -104,6 +108,9 @@ public class Flocking : MonoBehaviour {
 
     private void Update()
     {
-        GetComponent<Rigidbody>().velocity += Alignment();
+        GetComponent<Rigidbody>().velocity += Alignment() + Cohesion() + Seperation();
+
+        GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity.normalized;
+
     }
 }
