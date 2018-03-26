@@ -22,7 +22,7 @@ public class PathFinding : MonoBehaviour {
         FindPath(seeker.position, target.position);
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            FindPath(seeker.position, target.position);
+           StartFindPath(seeker.transform.position, target.transform.position);
         }                     
     }
 

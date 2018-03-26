@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ClickToTarget : MonoBehaviour {
 
+    Vector3 point;
+
     private void Update()
     {
         if(Input.GetMouseButtonDown(0))
@@ -14,8 +16,11 @@ public class ClickToTarget : MonoBehaviour {
 
             if (Physics.Raycast(ray, out hit, 100))
             {
-                transform.position = hit.transform.position;
+                point = hit.point;
+                transform.position = point;
             }
+
+            transform.position = point;
         }       
     }  
 }
