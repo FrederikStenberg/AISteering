@@ -19,11 +19,11 @@ public class PathFinding : MonoBehaviour {
 
     private void Update()
     {
-        if (target.GetComponent<ClickToTarget>().newTarget == true)
+        FindPath(seeker.position, target.position);
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            StartFindPath(seeker.transform.position, target.transform.position);
-            target.GetComponent<ClickToTarget>().newTarget = false;
-        }
+            FindPath(seeker.position, target.position);
+        }                     
     }
 
     public void StartFindPath(Vector3 startPos, Vector3 targetPos)
@@ -100,18 +100,9 @@ public class PathFinding : MonoBehaviour {
             path.Add(currentNode);
             currentNode = currentNode.parent;
         }
-        if(grid.followGrid == false)
-        {
-            Vector3[] waypoints = SimplifyPath(path);
-            Array.Reverse(waypoints);
-            return waypoints;
-        } else
-        {
-            path.Add(startNode);
-            Vector3[] waypoints = SimplifyPath(path);
-            Array.Reverse(waypoints);
-            return waypoints;
-        }      
+        Vector3[] waypoints = SimplifyPath(path);
+        Array.Reverse(waypoints);
+        return waypoints;
     }
 
     Vector3[] SimplifyPath(List<Node> path)
@@ -124,13 +115,7 @@ public class PathFinding : MonoBehaviour {
             Vector2 directionNew = new Vector2(path[i - 1].gridX - path[i].gridX, path[i - 1].gridY - path[i].gridY);
             if (directionNew != directionOld)
             {
-                if(grid.followGrid == false)
-                {
-                    waypoints.Add(path[i].worldPosition);
-                } else
-                {
-                    waypoints.Add(path[i - 1].worldPosition);
-                }       
+                waypoints.Add(path[i].worldPosition);
             }
             directionOld = directionNew;
         }
