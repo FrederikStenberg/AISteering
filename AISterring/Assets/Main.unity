@@ -568,6 +568,12 @@ MonoBehaviour:
   maxSpeed: 5
   maxForce: 2
   approachRadius: 10
+  maxSeeAhead: {x: 20, y: 0, z: 20}
+  maxAvoidForce: {x: 20, y: 0, z: 20}
+  obstacles:
+    serializedVersion: 2
+    m_Bits: 0
+  wall: {fileID: 1675820170}
 --- !u!1001 &197321089
 Prefab:
   m_ObjectHideFlags: 0
@@ -773,6 +779,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1265542976}
   speed: 20
+--- !u!1 &355622067 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1568861748246084, guid: 4ef42ecea2515e649bc03ae95e9c3db5,
+    type: 2}
+  m_PrefabInternal: {fileID: 126942519}
+--- !u!135 &355622071
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 355622067}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.36
+  m_Center: {x: 0.00000011920929, y: -0.000000052154064, z: -0.00000023841858}
 --- !u!4 &445304117 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4521418221064978, guid: 4ef42ecea2515e649bc03ae95e9c3db5,
@@ -910,6 +933,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7132b56fdff765e4a96866ec312c584b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &517201244 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1568861748246084, guid: 4ef42ecea2515e649bc03ae95e9c3db5,
+    type: 2}
+  m_PrefabInternal: {fileID: 9093576}
+--- !u!135 &517201248
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 517201244}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.36
+  m_Center: {x: 0, y: -0.000000037252903, z: 0}
 --- !u!1 &526677058
 GameObject:
   m_ObjectHideFlags: 0
@@ -1689,6 +1729,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74f8053e54e45f04894055c90e184710, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1675820170 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1568861748246084, guid: 4ef42ecea2515e649bc03ae95e9c3db5,
+    type: 2}
+  m_PrefabInternal: {fileID: 274813215}
+--- !u!135 &1675820174
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1675820170}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.36
+  m_Center: {x: 0, y: -0.000000037252903, z: 0}
 --- !u!1 &1810713230
 GameObject:
   m_ObjectHideFlags: 0
