@@ -6,7 +6,6 @@ public class Grid : MonoBehaviour
 {
 
     public bool displayGridGizmos;
-    public bool followGrid;
     public LayerMask unwalkableMask;
     public Vector2 gridWorldSize;
     public float nodeRadius;
@@ -117,27 +116,7 @@ public class Grid : MonoBehaviour
         {
             foreach (Node n in grid)
             {
-                //Gizmos.color = (n.walkable) ? Color.white : Color.red;
-
-                //Hardcode for visualization
-                if(n.movementPenalty == 0)
-                {
-                    Gizmos.color = Color.gray;
-                } else if (n.movementPenalty == 15)
-                {
-                    Gizmos.color = Color.green;
-                } else if (n.movementPenalty == 30)
-                {
-                    Gizmos.color = Color.yellow;
-                } else if (n.movementPenalty == 60)
-                {
-                    Gizmos.color = Color.blue;
-                }
-
-                if(n.walkable == false)
-                {
-                    Gizmos.color = Color.red;
-                }
+                Gizmos.color = (n.walkable) ? Color.white : Color.red;
 
                 Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
             }
